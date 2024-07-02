@@ -29,6 +29,14 @@ func _input(event):
 		$Label.modulate = Color.RED
 		health -= 20
 		print(health)
+		
+		if health <= 0:
+			health = 0
+			print("You Die")
+		elif health < 50:
+			print("You Injured")
+		else:
+			print("Healty")
 	
 	if event.is_action_released("my_action"):
 		$Label.modulate = Color.GREEN
