@@ -25,6 +25,9 @@ func _ready():
 	
 	var result = add(10,21)
 	print(result)
+	
+	var character_height = randi_range(120,200)
+	print("character height:" + str(character_height))
 
 
 func _input(event):
@@ -42,6 +45,12 @@ func _input(event):
 			print("Healty")
 		
 		jump()
+		
+		var roll = randf()
+		if roll <= 0.8:
+			print("get Common Item")
+		else:
+			print("get Rare Item")
 	
 	if event.is_action_released("my_action"):
 		$Label.modulate = Color.GREEN
