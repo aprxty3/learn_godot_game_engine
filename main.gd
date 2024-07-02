@@ -22,6 +22,9 @@ func _ready():
 	#print(health)
 	#health /= 2
 	#print(health)
+	
+	var result = add(10,21)
+	print(result)
 
 
 func _input(event):
@@ -37,8 +40,16 @@ func _input(event):
 			print("You Injured")
 		else:
 			print("Healty")
+		
+		jump()
 	
 	if event.is_action_released("my_action"):
 		$Label.modulate = Color.GREEN
-	
-	
+
+func jump():
+	#add effect
+	print("Jump!")
+
+func add(num1: int, num2:int)-> int:
+	var result = num1 + num2
+	return result
