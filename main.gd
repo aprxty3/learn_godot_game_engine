@@ -54,6 +54,26 @@ func _ready():
 		print(glass)
 	
 	print("walaa")
+	
+	var players = {
+		"Satu": 1,
+		"Lima": 5,
+		"Sepuluh": 10,
+	}
+	
+	players["Satu"] = 22
+	players["Dwayne"] = 100
+	
+	for usernmae in players:
+		print(usernmae + ": " + str(players[usernmae]))
+		
+	var enemies = {
+		"Satu" : {"Level": 10 , "Darah": 100},
+		"Dua" : {"Level": 15 , "Darah": 150},
+		"Tiga" : {"Level": 20 , "Darah": 200},
+	}
+	
+	print(enemies["Satu"]["Darah"])
 
 
 func _input(event):
@@ -80,6 +100,8 @@ func _input(event):
 	
 	if event.is_action_released("my_action"):
 		$Label.modulate = Color.GREEN
+	
+
 
 func jump():
 	#add effect
