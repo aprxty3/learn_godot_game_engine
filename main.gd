@@ -25,9 +25,21 @@ func _ready():
 	
 	var result = add(10,21)
 	print(result)
-	
+#
 	var character_height = randi_range(120,200)
 	print("character height:" + str(character_height))
+	
+	var items: Array[String] = ["Potion", "Feater","Stolen harp"]
+	print(items[0])
+	
+	items[0] = "Ntaps"
+	print(items[0])
+	
+	items.remove_at(1)
+	print(items)
+	
+	items.append("hahah")
+	print(items)
 
 
 func _input(event):
