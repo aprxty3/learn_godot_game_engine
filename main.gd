@@ -40,6 +40,9 @@ func _ready():
 	
 	items.append("hahah")
 	print(items)
+	
+	for item in items:
+		print(item)
 
 
 func _input(event):
