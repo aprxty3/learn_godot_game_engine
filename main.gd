@@ -43,6 +43,17 @@ func _ready():
 	
 	for item in items:
 		print(item)
+		
+	var glass := 0.0
+	
+	while glass < 0.5:
+		glass += randf_range(0.01, 0.2)
+		
+		if glass > 0.3:
+			break
+		print(glass)
+	
+	print("walaa")
 
 
 func _input(event):
