@@ -3,6 +3,13 @@ extends Node
 
 var health = 100
 
+enum Alignment {
+	Ally, 
+	Neutral, 
+	Enemy
+}
+
+@export var unit_allignment: Alignment
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Hello")
@@ -74,6 +81,11 @@ func _ready():
 	}
 	
 	print(enemies["Satu"]["Darah"])
+	
+	if unit_allignment == Alignment.Ally:
+		print("yeay")
+	else:
+		print("Naahh")
 
 
 func _input(event):
