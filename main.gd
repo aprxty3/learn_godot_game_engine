@@ -28,8 +28,12 @@ enum Alignment {
 @export var unit_allignment: Alignment
 # Called when the node enters the scene tree for the first time.
 
+@export var character_to_kill : Character
 
 func _ready():
+	
+	character_to_kill.die()
+	
 	print(chance_pct)
 	chance = 200
 	print(chance_pct)

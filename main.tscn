@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://8qp0511v1q7f"]
+[gd_scene load_steps=3 format=3 uid="uid://8qp0511v1q7f"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8pjpk"]
+[ext_resource type="Script" path="res://character.gd" id="2_5uu1y"]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("my_node")]
+[node name="Main" type="Node" node_paths=PackedStringArray("my_node", "character_to_kill")]
 script = ExtResource("1_8pjpk")
 my_node = NodePath("Player")
+character_to_kill = NodePath("Character")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -41,6 +43,21 @@ text = "asdasdasd"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Character" type="Node" parent="."]
+script = ExtResource("2_5uu1y")
+profession = "Healer"
+health = 100
+
+[node name="Character2" type="Node" parent="."]
+script = ExtResource("2_5uu1y")
+profession = "Knight"
+health = 150
+
+[node name="Character3" type="Node" parent="."]
+script = ExtResource("2_5uu1y")
+profession = "Boss"
+health = 200
 
 [connection signal="health_changed" from="." to="." method="_on_health_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
