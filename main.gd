@@ -1,5 +1,8 @@
 extends Node
 
+signal leveled_up(msg)
+
+var xp := 0
 
 var health = 100
 
@@ -15,6 +18,8 @@ enum Alignment {
 @export var unit_allignment: Alignment
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	leveled_up.connect(_on_leveled_up)
+	
 	print(weapon.get_path())
 	
 	if my_node is Node2D:
@@ -145,3 +150,20 @@ func jump():
 func add(num1: int, num2:int)-> int:
 	var result = num1 + num2
 	return result
+
+
+func _on_button_pressed():
+	print("Enter")
+
+
+func _on_timer_timeout():
+	xp += 5
+	print(xp)
+	if xp >= 20:
+		xp = 0
+		leveled_up.emit("Gx!")
+
+
+
+func _on_leveled_up(msg):
+	print(msg)

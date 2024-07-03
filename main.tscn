@@ -30,3 +30,17 @@ vertical_alignment = 1
 [node name="Graphics" type="Sprite2D" parent="Player"]
 
 [node name="Enemy" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 405.0
+offset_top = 364.0
+offset_right = 730.0
+offset_bottom = 480.0
+size_flags_horizontal = 4
+text = "asdasdasd"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
