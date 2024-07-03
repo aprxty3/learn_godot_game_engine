@@ -9,9 +9,17 @@ enum Alignment {
 	Enemy
 }
 
+@onready var weapon = get_node("Player/Weapon")
+@export var my_node : Node
+
 @export var unit_allignment: Alignment
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(weapon.get_path())
+	
+	if my_node is Node2D:
+		print("is 2D")
+	
 	print("Hello")
 	$Label.text = "Hello Green"
 	$Label.modulate = Color.GREEN
@@ -98,6 +106,9 @@ func _ready():
 			print("hmm")
 		_:
 			print("???")
+	
+	
+	
 
 
 func _input(event):

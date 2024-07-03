@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_8pjpk"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("my_node")]
 script = ExtResource("1_8pjpk")
+my_node = NodePath("Player")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -21,3 +22,11 @@ theme_override_font_sizes/font_size = 76
 text = "Hellow"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Weapon" type="Sprite2D" parent="Player"]
+
+[node name="Graphics" type="Sprite2D" parent="Player"]
+
+[node name="Enemy" type="Node2D" parent="."]
