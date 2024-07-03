@@ -86,6 +86,18 @@ func _ready():
 		print("yeay")
 	else:
 		print("Naahh")
+		
+	unit_allignment = Alignment.Neutral
+		
+	match unit_allignment: #Like Switch Catch
+		Alignment.Ally:
+			print("Hayy")
+		Alignment.Enemy:
+			print("Nahh")
+		Alignment.Neutral:
+			print("hmm")
+		_:
+			print("???")
 
 
 func _input(event):
