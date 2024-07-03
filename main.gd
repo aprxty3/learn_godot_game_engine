@@ -11,6 +11,11 @@ var health := 100 :
 		health = clamp(value, 0,100)
 		health_changed.emit(health)
 
+var chance := 0.2
+var chance_pct: int:
+	get:
+		return chance * 100
+	
 enum Alignment {
 	Ally, 
 	Neutral, 
@@ -25,6 +30,10 @@ enum Alignment {
 
 
 func _ready():
+	print(chance_pct)
+	chance = 200
+	print(chance_pct)
+	
 	health = -150
 	
 	leveled_up.connect(_on_leveled_up)
